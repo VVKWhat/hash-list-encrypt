@@ -7,12 +7,6 @@ $read = fread($passwords, filesize($file));
 $countsl = substr_count($read, ' ');
 $lines = explode(" ", $read);
 
-/*while($i<=3):
-    $i++;
-    $hash = '<br>' . $lines[$i];
-    $md5h = md5($hash);
-    echo $read . ' | ' . $hash . ' < Hash |<br>' . ' md5 | ' . $md5h . '<br>';
-endwhile;*/
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +79,7 @@ endwhile;*/
             
             $posttext = htmlspecialchars($_POST['texthash']);
             $requesttext = htmlspecialchars($_REQUEST['texthash']);
-            echo '<table><ul><strong>MD5 : ' . md5($posttext) . '<br>MD2 : ' . hash('md2', $posttext) . '<br>SHA-1 : ' . hash('sha1',$hash) . '<br>SHA-224 : ' . hash('sha224',$hash) . '<br>SHA256 : ' . hash('sha256',$hash) . '<br>Original text : ' . $posttext . '</strong></ul></table>';
+            echo '<table><ul><strong>MD5 : ' . md5($posttext) . '<br>MD2 : ' . hash('md2', $posttext) . '<br>SHA-1 : ' . hash('sha1',$posttext) . '<br>SHA-224 : ' . hash('sha224',$posttext) . '<br>SHA256 : ' . hash('sha256',$posttext) . '<br>Original text : ' . $posttext . '</strong></ul></table>';
             unset($_POST); 
         }
 
